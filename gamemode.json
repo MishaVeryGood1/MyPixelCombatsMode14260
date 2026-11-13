@@ -2,5 +2,20 @@
   "ApiVersion": 2,
   "Name": "Endless Mode",
   "Description": "Endless Game Mode",
-  "DefaultLang": "ru"
+  "DefaultLang": "ru",
+  "StartClientVersion": 703,
+  "MapFilter": {
+    "IsBlank": false,
+    "HasParcourEnd": false
+  },
+  "MapLists": [
+    {
+      "MapListId": 324,
+      "Name": "maplist.allmaps"
+    },
+    {
+      "MapListId": 581,
+      "Name": "maplist.interesting"
+    }
+  ]
 }
