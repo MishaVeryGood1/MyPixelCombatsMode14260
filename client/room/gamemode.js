@@ -1,17 +1,20 @@
+import * as teams from './default_teams.js';
+
+// Создание команд
+teams.create_team_blue();
+teams.create_team_red();
+
+// Присоединение игроков к командам
 Teams.OnRequestJoinTeam.Add(function(player, team) {
     team.Add(player);
 });
 
+// Возрождение после смены команды
 Teams.OnPlayerChangeTeam.Add(function(player) {
     player.Spawns.Spawn();
 });
 
-Teams.Add("Blue", "Teams/Blue", { b: 1 });
-Teams.Add("Red", "Teams/Red", { r: 1 });
-
-Teams.Get("Blue").Spawns.SpawnPointsGroups.Add(1);
-Teams.Get("Red").Spawns.SpawnPointsGroups.Add(2);
-
+// Мгновенное возрождение
 Spawns.GetContext().RespawnTime.Value = 0;
 
 // Счётчик времени вверх
